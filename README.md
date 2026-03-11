@@ -2,11 +2,11 @@
 
 > A modern animated SaaS landing page built with React and Tailwind CSS.
 
-A portfolio-ready frontend showcase focused on motion, responsive UX, and polished visual design for a fictional AI startup landing page.
+A modern SaaS-style landing page for a fictional startup. Built with React and Tailwind CSS, featuring responsive design, smooth animations, and dark mode support.
 
-## Live Demo
+## Live Demo (github pages):
 
-[https://your-demo-link.vercel.app](https://your-demo-link.vercel.app)
+[https://nikotheabstract.github.io/startup-landing-page/](https://nikotheabstract.github.io/startup-landing-page/)
 
 ## Screenshots
 
@@ -108,4 +108,4 @@ npm run dev
 
 ## Author
 
-Nikita Elfutin
+nikotheabstract
