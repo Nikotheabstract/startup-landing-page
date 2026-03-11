@@ -4,13 +4,17 @@ const footerLinks = [
   { href: '#features', label: 'Features' },
   { href: '#pricing', label: 'Pricing' },
   { href: '#testimonials', label: 'Testimonials' },
-  { href: '#', label: 'Privacy' },
+  {
+    href: 'https://github.com/Nikotheabstract/startup-landing-page',
+    label: 'Repository',
+    external: true,
+  },
 ]
 
 const socialLinks = [
-  { href: '#', icon: FiTwitter, label: 'Twitter' },
-  { href: '#', icon: FiLinkedin, label: 'LinkedIn' },
-  { href: '#', icon: FiGithub, label: 'GitHub' },
+  { href: 'https://x.com', icon: FiTwitter, label: 'Twitter' },
+  { href: 'https://www.linkedin.com', icon: FiLinkedin, label: 'LinkedIn' },
+  { href: 'https://github.com/Nikotheabstract/startup-landing-page', icon: FiGithub, label: 'GitHub' },
 ]
 
 export const Footer = () => (
@@ -28,6 +32,8 @@ export const Footer = () => (
           <a
             key={link.label}
             href={link.href}
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noreferrer noopener' : undefined}
             className="text-sm text-[color:var(--text-muted)] transition-colors hover:text-[color:var(--text)]"
           >
             {link.label}
@@ -40,6 +46,8 @@ export const Footer = () => (
           <a
             key={item.label}
             href={item.href}
+            target="_blank"
+            rel="noreferrer noopener"
             aria-label={item.label}
             className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[color:var(--border)] bg-[color:var(--bg-elevated)] text-[color:var(--text-muted)] transition-colors hover:text-[color:var(--text)]"
           >

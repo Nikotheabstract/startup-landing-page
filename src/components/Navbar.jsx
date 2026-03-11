@@ -8,6 +8,7 @@ const navLinks = [
   { href: '#pricing', label: 'Pricing' },
   { href: '#testimonials', label: 'Testimonials' },
 ]
+const mobileMenuId = 'mobile-navigation-panel'
 
 export const Navbar = ({ isDark, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -65,6 +66,8 @@ export const Navbar = ({ isDark, toggleTheme }) => {
             <button
               type="button"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls={mobileMenuId}
               onClick={() => setIsMenuOpen((open) => !open)}
               className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] text-[color:var(--text)]"
             >
@@ -77,6 +80,7 @@ export const Navbar = ({ isDark, toggleTheme }) => {
       <AnimatePresence>
         {isMenuOpen && (
           <Motion.div
+            id={mobileMenuId}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

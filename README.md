@@ -1,4 +1,4 @@
-# PromptFlow AI — Modern SaaS Startup Landing Page
+# AutomateFlow — Modern SaaS Startup Landing Page
 
 > A modern animated SaaS landing page built with React and Tailwind CSS.
 
@@ -28,11 +28,11 @@ Pricing section
 
 ![Hero Dark](screenshots/hero-dark.png)
 
-![Pricing Dark](screenshots/pricing-dark-v2.png)
+![Pricing Dark](screenshots/pricing-dark.png)
 
 ## Mobile Responsive Design
 
-![Mobile View](screenshots/mobile-view-v2.png)
+![Mobile View](screenshots/mobile-view.png)
 
 ## Animations
 
@@ -102,10 +102,14 @@ src
 ## Installation
 
 ```bash
+git clone https://github.com/Nikotheabstract/startup-landing-page.git
+cd startup-landing-page
 npm install
 npm run dev
 ```
 
+Open: `http://127.0.0.1:5173/`
+
 ## Author
 
-nikotheabstract
+Nikita Elfutin
