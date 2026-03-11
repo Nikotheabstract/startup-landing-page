@@ -1,33 +1,90 @@
-# AutomateFlow - Startup Landing Page
+# PromptFlow AI — Modern SaaS Startup Landing Page
 
-A modern SaaS-style startup landing page built with React, Tailwind CSS, and Framer Motion.
+> A modern animated SaaS landing page built with React and Tailwind CSS.
 
-This project is designed as a portfolio-grade 2026 frontend showcase with polished visuals, responsive layout behavior, smooth motion, and dark mode support.
+A portfolio-ready frontend showcase focused on motion, responsive UX, and polished visual design for a fictional AI startup landing page.
 
-## Tech Stack
+## Project Preview
 
-- React (Vite)
-- Tailwind CSS
-- Framer Motion
-- React Icons
-- clsx
+![Project Preview](screenshots/preview.png)
+
+## Live Demo
+
+[https://your-demo-link.vercel.app](https://your-demo-link.vercel.app)
+
+## Screenshots
+
+### Desktop
+
+Hero section
+
+![Hero](screenshots/hero-light.png)
+
+Features section
+
+![Features](screenshots/features-light.png)
+
+Pricing section
+
+![Pricing](screenshots/pricing-light.png)
+
+## Dark Mode
+
+![Hero Dark](screenshots/hero-dark.png)
+
+![Pricing Dark](screenshots/pricing-dark.png)
+
+## Mobile Responsive Design
+
+![Mobile View](screenshots/mobile-view.png)
+
+## Animations
+
+Hero animation
+
+![Hero Animation](screenshots/hero-animation.gif)
+
+Card hover animation
+
+![Card Hover](screenshots/cards-hover.gif)
+
+Dark mode toggle animation
+
+![Dark Mode Toggle](screenshots/dark-mode-toggle.gif)
+
+Mobile navigation animation
+
+![Mobile Menu](screenshots/mobile-menu.gif)
 
 ## Features
 
-- Mobile-first responsive design (320px to 1440px+)
-- Sticky navigation with backdrop blur
-- Dark mode toggle with:
-  - Local preference persistence (`localStorage`)
-  - System preference support (`prefers-color-scheme`)
-- Hero section with animated gradient and floating UI stats
-- 6 animated feature cards with hover interactions
-- Product dashboard preview (sidebar, analytics cards, chart, table)
-- Pricing section with highlighted recommended plan
-- Testimonial grid with clean card layout
-- CTA band with gradient background and micro-interactions
-- Accessible semantic HTML and keyboard-friendly controls
+- Responsive design (mobile / tablet / desktop)
+- Dark mode with system preference support
+- Animated UI components
+- Modern SaaS landing page layout
+- Interactive feature cards
+- Pricing cards with hover animations
+- Mobile navigation menu
+- Sticky navigation bar
+- Smooth scrolling animations
 
-## Project Structure
+## Tech Stack
+
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Icons
+
+## UI Highlights
+
+- Smooth micro-interactions across buttons and cards
+- Responsive layout optimized for small to large screens
+- Animated components with subtle, modern motion
+- Clean SaaS visual language with soft gradients and rounded cards
+- Dark mode experience with preference persistence
+
+## Folder Structure
 
 ```text
 src
@@ -40,38 +97,19 @@ src
     Testimonials.jsx
     CTA.jsx
     Footer.jsx
-  components/ui
-    Button.jsx
-    Card.jsx
   hooks
     useDarkMode.js
   App.jsx
   main.jsx
 ```
 
-## Screenshots
-
-Desktop:
-
-![AutomateFlow desktop preview](./screenshots/home-desktop.png)
-
-Mobile:
-
-![AutomateFlow mobile preview](./screenshots/home-mobile.png)
-
-## Run Locally
+## Installation
 
 ```bash
-cd /Users/nikitaelfutin/projects/portfolio/Startup_Landing_Page
 npm install
 npm run dev
 ```
 
-Open the local URL shown in terminal (default: `http://localhost:5173`).
+## Author
 
-## Build for Production
-
-```bash
-npm run build
-npm run preview
-```
+Nikita Elfutin
