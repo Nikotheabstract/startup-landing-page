@@ -91,7 +91,7 @@ export const Hero = () => (
           <Motion.div
             animate={{ y: [-7, 7, -7] }}
             transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -left-2 top-8 z-20 hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-4 py-3 shadow-soft sm:block"
+            className="absolute -left-2 -top-14 z-20 hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-4 py-3 shadow-soft sm:block"
           >
             <p className="text-xs text-[color:var(--text-muted)]">Task completion</p>
             <p className="text-lg font-semibold text-[color:var(--text)]">+47%</p>
