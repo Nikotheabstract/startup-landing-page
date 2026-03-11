@@ -18,7 +18,7 @@ export const Navbar = ({ isDark, toggleTheme }) => {
       <div className="section-container">
         <nav className="flex h-20 items-center justify-between" aria-label="Main navigation">
           <a
-            href="#"
+            href="#main-content"
             className="inline-flex items-center gap-2 rounded-xl text-lg font-bold text-[color:var(--text)]"
           >
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[color:var(--primary)] text-white">
