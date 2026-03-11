@@ -28,11 +28,11 @@ Pricing section
 
 ![Hero Dark](screenshots/hero-dark.png)
 
-![Pricing Dark](screenshots/pricing-dark.png)
+![Pricing Dark](screenshots/pricing-dark-v2.png)
 
 ## Mobile Responsive Design
 
-![Mobile View](screenshots/mobile-view.png)
+![Mobile View](screenshots/mobile-view-v2.png)
 
 ## Animations
 
