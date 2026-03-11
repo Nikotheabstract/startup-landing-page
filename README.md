@@ -4,10 +4,6 @@
 
 A portfolio-ready frontend showcase focused on motion, responsive UX, and polished visual design for a fictional AI startup landing page.
 
-## Project Preview
-
-![Project Preview](screenshots/preview.png)
-
 ## Live Demo
 
 [https://your-demo-link.vercel.app](https://your-demo-link.vercel.app)
