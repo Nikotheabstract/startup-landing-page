@@ -8,12 +8,22 @@ const cards = [
   { label: 'Saved Hours', value: '1,420', delta: '+31%' },
 ]
 
+const dashboardSections = [
+  { icon: FiHome, label: 'Overview' },
+  { icon: FiPieChart, label: 'Analytics' },
+  { icon: FiUsers, label: 'Workflows' },
+  { icon: FiBell, label: 'Alerts' },
+  { icon: FiSettings, label: 'Settings' },
+]
+
 const tableRows = [
   { name: 'Lead Qualification', owner: 'Sales Ops', status: 'Active' },
   { name: 'Invoice Reconciliation', owner: 'Finance', status: 'Active' },
   { name: 'Onboarding Sequence', owner: 'People Team', status: 'Pending' },
   { name: 'Escalation Triage', owner: 'Support', status: 'Active' },
 ]
+
+const throughputHeights = [24, 47, 35, 53, 44, 67, 59, 73, 69, 81]
 
 export const ProductPreview = () => (
   <section className="py-16 sm:py-20 lg:py-24">
@@ -45,40 +55,33 @@ export const ProductPreview = () => (
           <div className="grid min-h-[540px] md:grid-cols-[230px_1fr]">
             <aside className="border-b border-[color:var(--border)] bg-[color:var(--bg-muted)] p-5 md:border-b-0 md:border-r">
               <p className="mb-6 text-sm font-semibold text-[color:var(--text-muted)]">Dashboard</p>
-              <nav className="space-y-2" aria-label="Dashboard navigation">
-                {[
-                  { icon: FiHome, label: 'Overview' },
-                  { icon: FiPieChart, label: 'Analytics' },
-                  { icon: FiUsers, label: 'Workflows' },
-                  { icon: FiBell, label: 'Alerts' },
-                  { icon: FiSettings, label: 'Settings' },
-                ].map((item, idx) => (
-                  <button
-                    key={item.label}
-                    type="button"
-                    className={`flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm transition-colors ${
-                      idx === 0
-                        ? 'bg-[color:var(--bg-elevated)] text-[color:var(--text)] shadow-sm'
-                        : 'text-[color:var(--text-muted)] hover:bg-[color:var(--bg-elevated)] hover:text-[color:var(--text)]'
-                    }`}
-                  >
-                    <item.icon />
-                    {item.label}
-                  </button>
-                ))}
+              <nav aria-label="Dashboard sections">
+                <ul className="space-y-2">
+                  {dashboardSections.map((item, idx) => (
+                    <li
+                      key={item.label}
+                      className={`flex items-center gap-3 rounded-xl px-3 py-2 text-left text-sm ${
+                        idx === 0
+                          ? 'bg-[color:var(--bg-elevated)] text-[color:var(--text)] shadow-sm'
+                          : 'text-[color:var(--text-muted)]'
+                      }`}
+                    >
+                      <item.icon aria-hidden="true" />
+                      <span>{item.label}</span>
+                      {idx === 0 ? <span className="sr-only">(active section)</span> : null}
+                    </li>
+                  ))}
+                </ul>
               </nav>
             </aside>
 
             <div className="space-y-6 p-5 sm:p-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <h3 className="text-xl">Automation Analytics</h3>
-                <button
-                  type="button"
-                  className="inline-flex items-center gap-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-3 py-2 text-sm text-[color:var(--text-muted)]"
-                >
-                  <FiFilter />
+                <div className="inline-flex items-center gap-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] px-3 py-2 text-sm text-[color:var(--text-muted)]">
+                  <FiFilter aria-hidden="true" />
                   Last 30 days
-                </button>
+                </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-3">
@@ -91,13 +94,23 @@ export const ProductPreview = () => (
                 ))}
               </div>
 
-              <div className="rounded-2xl border border-[color:var(--border)] p-4">
+              <div
+                className="rounded-2xl border border-[color:var(--border)] p-4"
+                aria-labelledby="product-throughput-title"
+                aria-describedby="product-throughput-summary"
+              >
                 <div className="mb-4 flex items-center justify-between">
-                  <p className="text-sm font-medium text-[color:var(--text-muted)]">Workflow Throughput</p>
+                  <p id="product-throughput-title" className="text-sm font-medium text-[color:var(--text-muted)]">
+                    Workflow Throughput
+                  </p>
                   <p className="text-xs text-[color:var(--text-muted)]">Weekly</p>
                 </div>
-                <div className="flex h-40 items-end gap-2">
-                  {[24, 47, 35, 53, 44, 67, 59, 73, 69, 81].map((value, index) => (
+                <p id="product-throughput-summary" className="sr-only">
+                  Example weekly throughput bars ranging from 24 percent to 81 percent, showing higher
+                  activity toward the end of the period.
+                </p>
+                <div className="flex h-40 items-end gap-2" aria-hidden="true">
+                  {throughputHeights.map((value, index) => (
                     <Motion.div
                       key={value + index}
                       initial={{ height: 0 }}

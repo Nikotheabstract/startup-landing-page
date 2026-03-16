@@ -3,6 +3,9 @@ import { FiArrowRight, FiCheckCircle } from 'react-icons/fi'
 import { Button } from './ui/Button'
 import { Card } from './ui/Card'
 
+const workflowStats = ['Leads', 'Ops', 'Support']
+const processTimelineHeights = [45, 66, 52, 88, 72, 90, 81]
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (delay = 0) => ({
@@ -77,7 +80,7 @@ export const Hero = () => (
             className="mt-8 flex flex-wrap items-center gap-5 text-sm text-[color:var(--text-muted)]"
           >
             <span>Trusted by 2,500+ teams</span>
-            <span className="h-1 w-1 rounded-full bg-[color:var(--text-muted)]" />
+            <span className="h-1 w-1 rounded-full bg-[color:var(--text-muted)]" aria-hidden="true" />
             <span>99.95% uptime SLA</span>
           </Motion.div>
         </div>
@@ -116,7 +119,7 @@ export const Hero = () => (
 
             <div className="space-y-4">
               <div className="grid grid-cols-3 gap-3">
-                {['Leads', 'Ops', 'Support'].map((item, idx) => (
+                {workflowStats.map((item, idx) => (
                   <div key={item} className="rounded-2xl bg-[color:var(--bg-muted)] p-3">
                     <p className="text-xs text-[color:var(--text-muted)]">{item}</p>
                     <p className="mt-2 text-xl font-semibold text-[color:var(--text)]">{36 + idx * 12}%</p>
@@ -124,13 +127,21 @@ export const Hero = () => (
                 ))}
               </div>
 
-              <div className="rounded-2xl bg-[color:var(--bg-muted)] p-4">
+              <div
+                className="rounded-2xl bg-[color:var(--bg-muted)] p-4"
+                aria-labelledby="hero-process-timeline-title"
+                aria-describedby="hero-process-timeline-summary"
+              >
                 <div className="mb-3 flex items-center justify-between text-xs text-[color:var(--text-muted)]">
-                  <span>Process timeline</span>
+                  <span id="hero-process-timeline-title">Process timeline</span>
                   <span>Last 7 days</span>
                 </div>
-                <div className="flex items-end gap-2">
-                  {[45, 66, 52, 88, 72, 90, 81].map((h, i) => (
+                <p id="hero-process-timeline-summary" className="sr-only">
+                  Workflow throughput trend for the last seven days, ranging from 45 percent to 90
+                  percent and ending higher than it started.
+                </p>
+                <div className="flex items-end gap-2" aria-hidden="true">
+                  {processTimelineHeights.map((h, i) => (
                     <Motion.div
                       key={h + i}
                       initial={{ height: 0 }}

@@ -12,6 +12,7 @@ const mobileMenuId = 'mobile-navigation-panel'
 
 export const Navbar = ({ isDark, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const themeToggleLabel = isDark ? 'Switch to light mode' : 'Switch to dark mode'
 
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--border)] bg-[color:var(--bg)]/80 backdrop-blur-xl">
@@ -47,7 +48,8 @@ export const Navbar = ({ isDark, toggleTheme }) => {
             <button
               type="button"
               onClick={toggleTheme}
-              aria-label="Toggle dark mode"
+              aria-label={themeToggleLabel}
+              aria-pressed={isDark}
               className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] text-[color:var(--text)] transition-colors hover:bg-[color:var(--bg-muted)]"
             >
               {isDark ? <FiSun /> : <FiMoon />}
@@ -58,7 +60,8 @@ export const Navbar = ({ isDark, toggleTheme }) => {
             <button
               type="button"
               onClick={toggleTheme}
-              aria-label="Toggle dark mode"
+              aria-label={themeToggleLabel}
+              aria-pressed={isDark}
               className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[color:var(--border)] bg-[color:var(--bg-elevated)] text-[color:var(--text)]"
             >
               {isDark ? <FiSun /> : <FiMoon />}
