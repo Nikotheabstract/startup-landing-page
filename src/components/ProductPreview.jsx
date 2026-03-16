@@ -112,7 +112,7 @@ export const ProductPreview = () => (
                 <div className="flex h-40 items-end gap-2" aria-hidden="true">
                   {throughputHeights.map((value, index) => (
                     <Motion.div
-                      key={value + index}
+                      key={`${value}-${index}`}
                       initial={{ height: 0 }}
                       whileInView={{ height: `${value}%` }}
                       viewport={{ once: true }}
